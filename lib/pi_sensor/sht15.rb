@@ -102,12 +102,12 @@ module PiSensor
 
       io.mode(@data, INPUT)
       if io.read(@data) != LOW
-        raise SensorError, "Sensor should be LOW but isn't"
+        raise SensorError, "Sensor measurement confirmation error: data pin should be LOW but isn't."
       end
 
       io.write(@clock, LOW)
       if io.read(@data) != HIGH
-        raise SensorError, "Sensor should be HIGH but isn't"
+        raise SensorError, "Sensor measurement confirmation error: sensor should be HIGH but isn't."
       end
 
     end
@@ -120,19 +120,16 @@ module PiSensor
       io.mode(@data, INPUT)
 
       # Wait for measurement
-      puts "Waiting for sensor to take measurement..."
       1.upto(10) do |i|
         sleep(0.1)
         if io.read(@data) == LOW
           break
         end
       end
-      puts "Data pin LOW, ready to read measurement."
 
       # If pin is still high at this point, we've got a problem
       if io.read(@data) == HIGH
-        puts "!! Ack Error 3"
-        exit 0
+        raise SensorError, "Sensor measurement failure: sensor not completing measurement in a timely manner."
       end
 
       # Read first 8 bits
