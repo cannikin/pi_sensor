@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["cannikinn@gmail.com"]
   gem.description   = %q{Use Ruby to talk to a bunch of sensors with your Raspberry Pi.}
   gem.summary       = %q{Use Ruby to talk to a bunch of sensors with your Raspberry Pi.}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/cannikin/pi_sensor"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
