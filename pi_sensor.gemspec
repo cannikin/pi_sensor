@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = PiSensor::VERSION
   gem.authors       = ["Rob Cameron"]
   gem.email         = ["cannikinn@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{Use Ruby to talk to a bunch of sensors with your Raspberry Pi.}
+  gem.summary       = %q{Use Ruby to talk to a bunch of sensors with your Raspberry Pi.}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)
