@@ -26,7 +26,7 @@ library are the wiringPi pin numbers: https://projects.drogon.net/raspberry-pi/w
 Here's an example using the [SHT15](https://www.sparkfun.com/products/8257) temperture/humidty sensor.
 Note that you need to run this code as root or with `sudo`:
 
-    require 'wiringpi'
+    require 'pi_sensor'
 
     # Connects Pi physical pin 11 to SCK and Pi physical pin 12 to DATA
     sensor = PiSensor::SHT15.new :clock => 0, :data => 1
